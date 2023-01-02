@@ -98,7 +98,7 @@ def checkDomain_abuseipdb(urlist):
                             text = cell.text
                             list_of_cells.append(text)
                         list_of_rows.append(list_of_cells)
-                    print (list_of_rows[i][0]+"     |   "+list_of_rows[i][1]+"  |   "+list_of_rows[i][3])
+                    print (list_of_rows[i][0]+"   |   "+list_of_rows[i][1]+"   |   "+list_of_rows[i][3])
                     
                     time.sleep(3)
                     with open(r'aidb.html','a+') as output:
@@ -110,13 +110,15 @@ def checkDomain_abuseipdb(urlist):
                             <tbody>
                             <tr>
                                 <th align="left" valign="middle" width="200px" bgcolor="#33adff">
+                                    <b>IP</b>
+                                <th align="left" valign="middle" width="200px" bgcolor="#33adff">
                                     <b>Reporter</b>
                                 </th>
                                 <th align="left" valign="middle" width="100px" bgcolor="#33adff">
-                                    <b>Date</b>
+                                    <b>Fecha</b>
                                 </th>
                                 <th align="left" valign="middle" width="300px" bgcolor="#33adff">
-                                    <b>Categories</b>
+                                    <b>Categorías</b>
                                 </th>
                                 
                             </tr>
@@ -124,6 +126,7 @@ def checkDomain_abuseipdb(urlist):
                             
                             
                             <tr bgcolor="#ffffff">
+                                <td align="left" valign="top" nowrap="nowrap" width="200px " >{value_name5} </td>
                                 <td align="left" valign="top" nowrap="nowrap" width="200px " >{value_name1}</td>
                                 <td align="left" valign="top" nowrap="nowrap" width="100px " >{value_name2}</td>
                                 <td align="left" valign="top" nowrap="nowrap" width="300px " >{value_name3}<br></td>
@@ -133,7 +136,7 @@ def checkDomain_abuseipdb(urlist):
                             
                             
                     </body>
-                </html>""".format(value_name1=list_of_rows[i][0],value_name2=list_of_rows[i][1],value_name3=list_of_rows[i][3],value_name4=v4))
+                </html>""".format(value_name1=list_of_rows[i][0],value_name2=list_of_rows[i][1],value_name3=list_of_rows[i][3],value_name4=v4,value_name5=blacklist))
                 
                     i+=1
                 print (20*"-")
